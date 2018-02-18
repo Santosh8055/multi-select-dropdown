@@ -24,8 +24,3 @@ Steps to run this project locally.
 6) Open the browser by and type the following url 
     
     http://localhost:4200/
-
-
-
-
-5)
