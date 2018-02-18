@@ -1,0 +1,28 @@
+<div tabindex="-1">
+  <div class="dropdown">
+    <div class="pallet-wrapper" (click)="showDropdown()">
+
+      <span class="dropdown-placeholder" *ngIf="!selectedData.length && selectedItem[0] === '' && searchItem === ''">
+        {{placeholder}}
+        </span>
+      <span *ngIf="multiple">
+        <span  class="pallet" *ngFor="let item of selectedData ">
+                <span class="delete-pallet" (click)="deleteSelectedItem(item, $event)">x &nbsp; </span> {{item[1]}}
+      </span>
+      </span>
+
+      <span *ngIf="!multiple" [innerText]="selectedItem[1]"></span>
+
+      <input class="search-bar" [(ngModel)]="searchItem" (keyup)="searchInputKeyup($event)">
+      <span><i class="arrow down"></i></span>
+
+    </div>
+
+    <ul [@toggleState]="isDropdownVisible">
+      <li *ngFor="let item of data | filter:searchItem " value="{{item[0]}} " (click)="toggleSelectedItem(item)" [class.selected]="item[2]"
+        [class.selected]="item[0] === selectedItem[0] && item[1] === selectedItem[1]">
+        {{item[1]}}
+      </li>
+    </ul>
+  </div>
+</div>
