@@ -13,18 +13,12 @@ Steps to run this project locally.
 
 4) Start the web server by typing the following command in command prompt.
 
-    npm start.
+    npm run dev.    
 
-    You should see "webpack: Compiled successfully." on the console
-    
-    (builds the application and starts a web server. Do not close the command prompt.)
+    builds the application and starts a web server. Do not close the command prompt.
 
-5) Start the server for data by typing the following command (Open a second command prompt)
+    (You should see "server is running" and "webpack: Compiled successfully." messages on the console)    
 
-    npm run server
-
-    (You should see "server is running" on the console)
-
-6) Open the browser by and type the following url 
+5) Open the browser by and type the following url 
     
     http://localhost:4200/
