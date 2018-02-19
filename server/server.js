@@ -2,7 +2,6 @@ var http = require('http');
 var fs = require('fs');
 
 // 404 response
-
 function sendBlankResponse(response) {
     response.writeHead(404, { 'Context-Type': 'text/plain' });
     response.write('Error! Page not found');

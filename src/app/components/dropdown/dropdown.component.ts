@@ -16,7 +16,7 @@ import { trigger, state, style, transition, animate, group, query, stagger, keyf
     ])
   ]
 })
-export class DropdownComponent implements OnInit {
+export class DropdownComponent {
 
   @Input() data: any[];
   @Input() multiple: boolean;
@@ -37,42 +37,55 @@ export class DropdownComponent implements OnInit {
 
 
   constructor(private el: ElementRef) {
+    // initializing the data
     this.selectedData = [];
     this.selectedItem = ['', '', true];
   }
 
-
+  // shows the dropdown
   public showDropdown() {
     this.focusToInput();
     this.isDropdownVisible = 'true';
   }
+
+  //hides the dropdown
   public hideDropdown() {
     this.isDropdownVisible = 'false';
   }
 
+  // focus goes to the input and allows typing
   public focusToInput() {
     this.el.nativeElement.querySelector('.search-bar').focus();
   }
-  public toggleSelectedItem(item) {
 
+  // Toggles the selection of item
+  public toggleSelectedItem(item) {
     var i = this.selectedData.indexOf(item);
     this.focusToInput();
     this.searchItem = '';
+
+
     if (this.multiple) {
+      // In case multiple is enabled
       if (i === -1) {
+        // selecting
         this.hideDropdown();
         item[2] = true;
         this.selectedData.push(item);
       }
       else {
+        // deselecting
         item[2] = false;
         this.selectedData.splice(i, 1);
       }
     } else {
+      // In case multiple is disabled
       if (this.selectedItem[0] === item[0] && this.selectedItem[1] === item[1]) {
+        // deselecting    
         this.selectedItem[0] = '';
         this.selectedItem[1] = '';
       } else {
+        // selecting
         this.selectedItem[0] = item[0];
         this.selectedItem[1] = item[1];
         this.hideDropdown();
@@ -81,18 +94,19 @@ export class DropdownComponent implements OnInit {
     }
 
   }
-
+  
+  // When user starts typing
   public searchInputKeyup(e) {
     let i: number = -1;
     if (this.searchItem && this.searchItem !== '') {
       this.showDropdown();
       this.backspaceCount = 0;
     } else if (this.searchItem === '' && e.keyCode === 8) {
+      // In case of backspace click when the search input is empty
       this.backspaceCount++;
       if (this.backspaceCount > 1) {
-        console.log('do stuff');
+        // Deselecting when backspace is pressed twice
         if (this.multiple && this.selectedData && this.selectedData.length) {
-
           i = this.data.indexOf(this.selectedData[this.selectedData.length - 1]);
           if (i > -1) {
             this.data[i][2] = false;
@@ -108,6 +122,8 @@ export class DropdownComponent implements OnInit {
     }
 
   }
+
+  // when 'x' is clicked on the selected item in case of multiple
   public deleteSelectedItem(item, e) {
     var i = this.selectedData.indexOf(item);
     if (i > -1) {
@@ -119,8 +135,5 @@ export class DropdownComponent implements OnInit {
     }
   }
 
-  ngOnInit() {
-
-  }
 
 }

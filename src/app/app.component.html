@@ -4,11 +4,11 @@
   <div class='multiple-dropdown'>
     <h3>Single select dropdown</h3>
     <p>
-      Below example demonstates the single select dropdown. Click on the dropdown and start typing, values filter automatically.
-      Click on any state from the dropdown to select. Selected state will be binded to a variable and will be shown right
-      side of the dropdonw Click on the same state from the list to unselect the
+      Below example demonstrates the single select dropdown. Click on the dropdown and start typing, values filter automatically.
+      Click on any state from the dropdown to select. Selected state will be bound to a variable and will be shown right
+      side of the dropdown Click on the same state from the list to unselect.
       <br>
-      <br> When the dropdown is in focus click on the backspace twice to unselected the selected state
+      <br> When the dropdown is in focus click on the backspace twice to unselected the selected state.
     </p>
 
     <div class="responsive-table">
@@ -26,11 +26,12 @@
     <br>
     <br>
 
-    <h3>Multi select dropdown</h3>
+    <h3>Multi-select dropdown</h3>
     <p>
-      Below example demonstates the multi value dropdown. Click on any state to select the state. Clicking on the selected state
-      de selects the state. Click the cross button to remove the state from selected states
-      <br> Click backspace twice to unselect the last seleted state
+      Below example demonstrates the multi-value dropdown. Click on any state to select the state. Clicking on the selected state
+      de selects the state. Click the cross button to remove the state from selected states.
+      <br>
+      <br> Click backspace twice to unselect the last selected state.
     </p>
 
     <div class="responsive-table">
@@ -49,15 +50,15 @@
       Data list dropdown
     </h3>
     <p>
-      Similar funtionality can be achived by datalist, which only works in modern browsers as it is HTML5 element. The Datalist
+      Similar functionality can be achieved by datalist, which only works in modern browsers as it is an HTML5 element. The Datalist
       element is used to suggest input values to the user, thereby providing an "autocomplete" feature on form elements.
-      This is especially useful for long lists. Datalist works only for single select dropdown
+      This is especially useful for long lists. Datalist works only for the single select dropdown. This is browser dependent,
+      meaning, it works differently for different browser since it is an HTML attribute.
     </p>
     <br>
-
     <div class="responsive-table">
       <div class="column">
-        <input [(ngModel)]="dataListSelectedState" class="data-list-states" list="states" name="state">
+        <input [(ngModel)]="dataListSelectedState" placeholder="{{placeholder}}" class="data-list-states" list="states" name="state">
         <datalist id="states">
           <option *ngFor="let state of dataListStates" value="{{state[1]}}">
             {{state[0]}}

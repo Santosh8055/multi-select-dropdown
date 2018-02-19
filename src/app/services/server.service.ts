@@ -12,14 +12,19 @@ export class ServerService {
   }
   getStates(): Promise<any> {
 
+    // trying to get data from the server which is created in server/server
     return this.httpClient.get('http://localhost:8888/states')
       .toPromise()
       .then(this.extractData)
       .catch(err => {
-        console.warn('server is not started; using different server');
-
+        // in case of server did not start using online an service
+        console.warn('Server is not started; using different server');
         return this.httpClient.get('https://api.myjson.com/bins/1fuqop')
-          .toPromise()
+          .toPromise().
+          then(this.extractData)
+          .catch(err => {
+            console.error('Server not started provided by online service');
+          })
       })
   }
 

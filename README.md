@@ -21,7 +21,7 @@
 
     (You should see "server is running" and "webpack: Compiled successfully." messages on the console)    
 
-5. Open the browser and type the following URL 
+5. Above command should automatically open your browser, in case it did not. Open the         browser and type the following URL 
 ```    
     http://localhost:4200/
 ```
@@ -31,17 +31,22 @@
 
 1. src folder
 
-    This folder contains all the files related to the project, where most of the work is done. Global setup is done in the src level. The majority of our application is under src/app
+    This folder contains all the files related to the project, where most of the work is done. Global setup is done in the src level. The majority of our application is under src/app.
 
-    Dropdown can be found under src/app/components 
+    Dropdown can be found under src/app/components.
 
     Service to connect to the server (provided by node) can found under the src/app/services
 
-    Pipe to filter the data based on the input given by user can be found under the src/app/pipe
+    Pipe to filter the data based on the input given by user can be found under the src/app/pipe.
 
-2. server folder 
+2. style.less in src folder
+
+    Global styles will be in this file.    
+
+3. server folder 
 
     There will be two files in this folder. server.js and states.json. states.json file data will be served to project by running the server.js file.
+
 
 
 **About the framework**
