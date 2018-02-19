@@ -47,6 +47,6 @@
 **About the framework**
 
 For this project, the Angular framework was chosen. Angular is a component based MVC framework. Since the project is created using cli; it is easy to write clean HTML and CSS markup. Angular has everything out-of-the-box to build a modern web app. Angular uses two-way binding; so outside the component selected state is easily available.
-Angular have clear documentation and community support. 
+Angular has clear documentation and community support. 
 
 React and Vue are great libraries with a lot of advantages but the reason for not choosing them is that they are view oriented libraries. Vue doesn't have proper IDE support because of .vue extension files.
