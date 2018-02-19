@@ -1,7 +1,7 @@
 
 **Steps to run this project locally.**
 
-1. Clone or download the project. (Unzip if the project.)
+1. Clone or download the project. (Unzip the project.)
 
 2. Navigate to the downloaded path in command prompt.
 
