@@ -11,17 +11,17 @@
       <br> When the dropdown is in focus click on the backspace twice to unselected the selected state
     </p>
 
-    <table>
-      <tr>
-        <td>
-          <app-dropdown [placeholder]='placeholder' [data]='singleSelectStates' [multiple]='single' [selectedItem]='singleSelectedValue'>
-          </app-dropdown>
-        </td>
-        <td>
-          Selected state:<br/> {{singleSelectedValue[1]}}
-        </td>
-      </tr>
-    </table>
+    <div class="responsive-table">
+      <div class="column">
+        <app-dropdown [placeholder]='placeholder' [data]='singleSelectStates' [multiple]='single' [selectedItem]='singleSelectedValue'>
+        </app-dropdown>
+      </div>
+      <div class="column">
+        Selected state:<br/> {{singleSelectedValue[1]}}
+      </div>
+    </div>
+
+
 
     <br>
     <br>
@@ -32,17 +32,16 @@
       de selects the state. Click the cross button to remove the state from selected states
       <br> Click backspace twice to unselect the last seleted state
     </p>
-    <table>
-      <tr>
-        <td>
-          <app-dropdown [placeholder]='placeholder' [data]='multiSelectStates' [multiple]='multiple' [selectedData]='multiSelectedData'></app-dropdown>
-        </td>
-        <td>
-          selected states:
-          <div *ngFor='let state of multiSelectedData'>{{state[1]}}</div>
-        </td>
-      </tr>
-    </table>
+
+    <div class="responsive-table">
+      <div class="column">
+        <app-dropdown [placeholder]='placeholder' [data]='multiSelectStates' [multiple]='multiple' [selectedData]='multiSelectedData'></app-dropdown>
+      </div>
+      <div class="column">
+        selected states:
+        <span *ngFor='let state of multiSelectedData'>{{state[1]}} &nbsp;</span>
+      </div>
+    </div>
     <br>
     <br>
 
@@ -56,24 +55,20 @@
     </p>
     <br>
 
-    <table>
-      <tr>
-        <td>
-          <input [(ngModel)]="dataListSelectedState" class="data-list-states" list="states" name="state">
-          <datalist id="states">
-            <option *ngFor="let state of dataListStates" value="{{state[1]}}">
-              {{state[0]}}
-            </option>
+    <div class="responsive-table">
+      <div class="column">
+        <input [(ngModel)]="dataListSelectedState" class="data-list-states" list="states" name="state">
+        <datalist id="states">
+          <option *ngFor="let state of dataListStates" value="{{state[1]}}">
+            {{state[0]}}
+          </option>
 
-          </datalist>
-        </td>
-        <td>
-          Selected state:<br/> {{dataListSelectedState}}
-        </td>
-      </tr>
-    </table>
-
-
+        </datalist>
+      </div>
+      <div class="column">
+        Selected state:<br/> {{dataListSelectedState}}
+      </div>
+    </div>
     <br>
     <br>
     <br>

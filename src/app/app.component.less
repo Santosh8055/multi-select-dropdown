@@ -5,15 +5,6 @@
     .multiple-dropdown {
         background-color: white;
         padding: 0.5em;
-        table {
-            width: 100%;
-            tr td:last-child {
-                width: 30%
-            }
-            tr td {
-                vertical-align: top;
-            }
-        }
     }
     .data-list-states {
         width: 100%;
@@ -22,6 +13,44 @@
         border-radius: 4px;
         &:focus {
             outline: none;
+        }
+    }
+}
+
+.responsive-table {
+    width: 100%;
+    &>div.column {
+        display: inline-block;
+    }
+    &>div.column:first-child {
+        width: 69%;
+    }
+    &>div.column:last-child {
+        width: 30%;
+    }
+}
+
+@media screen and (max-width: 900px) and (min-width: 650px) {
+    .main-component {
+        width: 90%
+    }
+    .responsive-table {
+        &>div.column:first-child,
+        &>div.column:last-child {
+            width: 49%;
+        }
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .main-component {
+        width: 95%;
+        margin-top: 15%;
+    }
+    .responsive-table {
+        &>div.column:first-child,
+        &>div.column:last-child {
+            width: 100%;
         }
     }
 }
