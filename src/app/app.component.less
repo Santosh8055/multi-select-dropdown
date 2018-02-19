@@ -5,6 +5,9 @@
     .multiple-dropdown {
         background-color: white;
         padding: 0.5em;
+        &>* {
+            clear: both;
+        }
     }
     .data-list-states {
         width: 100%;
@@ -20,7 +23,9 @@
 .responsive-table {
     width: 100%;
     &>div.column {
-        display: inline-block;
+        float: left;
+        padding: 1%;
+        box-sizing: border-box;
     }
     &>div.column:first-child {
         width: 69%;

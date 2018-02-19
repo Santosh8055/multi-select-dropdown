@@ -8,19 +8,25 @@ import 'rxjs/add/operator/toPromise';
 export class ServerService {
 
 
-  statesData = {};
-
   constructor(private httpClient: HttpClient) {
-    this.httpClient.get('http://localhost:8888/states')
-      .subscribe((data) => {
-        this.statesData = data
-      });
   }
   getStates(): Promise<any> {
 
     return this.httpClient.get('http://localhost:8888/states')
-      .toPromise();
+      .toPromise()
+      .then(this.extractData)
+      .catch(err => {
+        console.warn('server is not started; using different server');
+
+        return this.httpClient.get('https://api.myjson.com/bins/1fuqop')
+          .toPromise()
+      })
   }
+
+  private extractData(res: Response) {
+    return res || {};
+  }
+
 
 
 
