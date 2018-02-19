@@ -39,11 +39,11 @@
 
     Pipe to filter the data based on the input given by user can be found under the src/app/pipe.
 
-2. style.less in src folder
+    style.less in src folder
 
     Global styles will be in this file.    
 
-3. server folder 
+2. server folder 
 
     There will be two files in this folder. server.js and states.json. states.json file data will be served to project by running the server.js file.
 
